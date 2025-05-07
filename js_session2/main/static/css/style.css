@@ -1,0 +1,111 @@
+body {
+    font-family: sans-serif;
+    padding: 1rem;
+    background-color: #FE7743;
+}
+
+.section {
+    margin-bottom: 2rem;
+    background-color: #EFEEEA;
+    color: #273F4F;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 실습 1 상품 카드 css */
+.card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.product-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 8px;
+}
+.card-content {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+.product-price,
+.product-stock {
+    font-size: 0.95rem;
+    margin: 2px 0;
+}
+
+/* 품절 */
+.out-of-stock {
+    background-color: #d3d3d3;
+    opacity: 0.6;
+}
+
+button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #6366f1;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+ul {
+    padding-left: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.comment-card {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.comment-content {
+    margin: 0;
+    font-size: 1rem;
+}
+
+#like-btn.liked-threshold {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+#like-btn.liked {
+    color: red;
+    font-weight: bold;
+}
+
+
