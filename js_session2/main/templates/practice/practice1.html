@@ -23,14 +23,16 @@
             
             <div class="section">
                 <h2>3. 좋아요 버튼</h2>
-                <button id="like-btn" data-liked="false">❤️ 0</button>
+                <button id="like-btn">❤️ 0</button>
             </div>
             
             <div class="section">
                 <h2>4. 게시판 만들기</h2>
                 <input id="title" placeholder="제목" /><br /><br />
                 <textarea id="content" placeholder="내용"></textarea><br /><br />
+                <input type="file" id="image-upload" accept="image/*" />
                 <button id="write-btn">작성</button>
+                <hr>
                 <div id="board"></div>
             </div>
         <!-- JS 연결 -->

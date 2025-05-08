@@ -96,16 +96,41 @@ li {
     font-size: 1rem;
 }
 
-#like-btn.liked-threshold {
-    background-color: gold;
+#like-btn{
+    padding: 3rem;
+    font-size: 6rem;
     color: black;
-    font-weight: bold;
-    transform: scale(1.1);
+    background-color: #d3d3d3;
 }
 
-#like-btn.liked {
-    color: red;
-    font-weight: bold;
+.post-card {
+    background-color: #d3d3d3;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    min-width: 600px;
+}
+.post-card h4 {
+    margin-top: 0;
+}
+.post-img {
+    width: 100%;
+    max-width: 50vw;
+    max-height: 50vh;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+}
+.post-like-btn, .delete-btn {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
 }
 
 

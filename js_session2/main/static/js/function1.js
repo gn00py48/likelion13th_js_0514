@@ -28,7 +28,6 @@ products.forEach((item) => {
             <p class="product-stock">재고: ${item.stock === 0 ? "품절" : item.stock + "개"}</p>
         </div>
     `;
-
     productList.appendChild(card);
 });
 
@@ -61,33 +60,30 @@ submitCommentBtn.addEventListener("click", () => {
 
 
 // -------------------------------
-// 3. 좋아요 버튼 기능 (누를수록 증가 + 색상 변화)
+// 3. 좋아요 버튼 만들기!
 // -------------------------------
 const likeBtn = document.getElementById("like-btn");
 let likeCount = 0;
+let isClicked = false;
 
 likeBtn.addEventListener("click", () => {
     likeCount++;
     likeBtn.textContent = `❤️ ${likeCount}`;
 
-    // 하트 색상 조건 변경
-    if (likeCount >= 10) {
-        likeBtn.classList.add("liked-threshold");
-    } else {
-        likeBtn.classList.remove("liked-threshold");
-    }
-
-    // 기본 하트 색상 변경 (짝수/홀수 기준)
-    if (likeCount % 2 === 0) {
-        likeBtn.style.color = "#f87171"; // 연한 빨강
-    } else {
-        likeBtn.style.color = "#facc15"; // 노랑 계열
+    // 처음 클릭 시 배경색 설정
+    if (!isClicked) {
+        likeBtn.style.backgroundColor = "#6366f1";
+        isClicked = true;
     }
 });
 
 
+
 // -------------------------------
 // 4. 게시판 작성 기능
+// -------------------------------
+// -------------------------------
+// 4. 게시판 작성 기능 (업로드 + 좋아요 포함)
 // -------------------------------
 const titleInput = document.getElementById("title");
 const contentInput = document.getElementById("content");
@@ -97,20 +93,45 @@ const board = document.getElementById("board");
 writeBtn.addEventListener("click", () => {
     const title = titleInput.value.trim();
     const content = contentInput.value.trim();
+    const fileInput = document.getElementById("image-upload");
+    const file = fileInput.files[0];
 
     if (!title || !content) return alert("제목과 내용을 모두 입력하세요");
 
     const post = document.createElement("div");
-    post.className = "post";
-    post.innerHTML = `<h4>${title}</h4><p>${content}</p>`;
+    post.className = "post-card";
+
+    let imageTag = "";
+    if (file) {
+        const imgURL = URL.createObjectURL(file);
+        imageTag = `<img src="${imgURL}" class="post-img" alt="첨부 이미지">`;
+    }
+
+    post.innerHTML = `
+        ${imageTag}
+        <h4>${title}</h4>
+        <p>${content}</p>
+    `;
+
+    const likeBtn = document.createElement("button");
+    let like = 0;
+    likeBtn.textContent = `❤️ ${like}`;
+    likeBtn.className = "inner-like-btn";
+    likeBtn.addEventListener("click", () => {
+        like++;
+        likeBtn.textContent = `❤️ ${like}`;
+    });
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "삭제";
+    deleteBtn.className = "delete-btn";
     deleteBtn.addEventListener("click", () => post.remove());
 
+    post.appendChild(likeBtn);
     post.appendChild(deleteBtn);
     board.appendChild(post);
 
     titleInput.value = "";
     contentInput.value = "";
+    fileInput.value = "";
 });
