@@ -11,31 +11,32 @@
         <h1>💜JS 실습💜 하다가 화내지 말기</h1>
             <div class="section">
                 <h2>1. 상품 카드 출력</h2>
-                <div id="product-list"></div>
+                <div id="product_list"></div>
             </div>
             
             <div class="section">
                 <h2>2. 댓글 작성 기능</h2>
-                <input id="comment-input" placeholder="댓글을 입력하세요" />
-                <button id="submit-comment">댓글 작성</button>
-                <ul id="comment-list"></ul>
+                <input id="comment_input" placeholder="댓글을 입력하세요" />
+                <button id="submit_comment">댓글 작성</button>
+                <ul id="comment_list"></ul>
             </div>
             
             <div class="section">
                 <h2>3. 좋아요 버튼</h2>
-                <button id="like-btn">❤️ 0</button>
+                <button id="likeBtn">❤️ 0</button>
             </div>
             
             <div class="section">
                 <h2>4. 게시판 만들기</h2>
                 <input id="title" placeholder="제목" /><br /><br />
                 <textarea id="content" placeholder="내용"></textarea><br /><br />
-                <input type="file" id="image-upload" accept="image/*" />
-                <button id="write-btn">작성</button>
+                <input type="file" id="image_upload" accept="image/*" />
+                <button id="writeBtn">작성</button>
                 <hr>
                 <div id="board"></div>
             </div>
-        <!-- JS 연결 -->
-        <script src="{% static 'js/function1.js' %}"></script>
+        
     </body>
+    <!-- JS 연결 -->
+    <script src="{% static 'js/function.js' %}"></script>
 </html>

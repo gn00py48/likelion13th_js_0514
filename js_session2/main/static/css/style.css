@@ -1,7 +1,10 @@
+/* css를 참고해서 JS 코드를 작성해 주세요! */
+
 body {
     font-family: sans-serif;
     padding: 1rem;
-    background-color: #FE7743;
+    background-color: #000000;
+    color: #EFEEEA;
 }
 
 .section {
@@ -14,50 +17,62 @@ body {
 }
 
 /* 실습 1 상품 카드 css */
+/* 실습 1 상품 카드 css */
+/* 실습 1 상품 카드 css */
+
 .card {
     display: flex;
     align-items: center;
     background-color: white;
-    padding: 1rem;
+    padding: 1.5rem;
     margin-bottom: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.product-img {
+.card:hover{
+    transform: scale(1.005); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.product_img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     margin-right: 1rem;
     border-radius: 8px;
 }
-.card-content {
+.card_content {
     height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
-.product-name {
+.product_name {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.2rem;
 }
-.product-price,
-.product-stock {
-    font-size: 0.95rem;
+.product_price,
+.product_stock {
+    font-size: 1rem;
     margin: 2px 0;
 }
 
-/* 품절 */
-.out-of-stock {
+/* 품절 상품에 추가할 CSS class */
+.soldOut {
     background-color: #d3d3d3;
     opacity: 0.6;
 }
+
+/* 2번 댓글 달기 기능에 사용되는 CSS */
+/* 2번 댓글 달기 기능에 사용되는 CSS */
+/* 2번 댓글 달기 기능에 사용되는 CSS */
 
 button {
     margin-left: 1rem;
     padding: 0.5rem 1rem;
     border: none;
-    background-color: #6366f1;
+    background-color: #FE7743;
     color: white;
     border-radius: 6px;
     cursor: pointer;
@@ -72,7 +87,6 @@ input, textarea {
     margin-bottom: 0.5rem;
 }
 
-
 ul {
     padding-left: 1.2rem;
 }
@@ -81,8 +95,8 @@ li {
     margin-bottom: 0.5rem;
 }
 
-.comment-card {
-    background-color: white;
+.comment_card {
+    background-color: #d3d3d3;
     padding: 1rem;
     margin-bottom: 0.5rem;
     border-radius: 8px;
@@ -90,20 +104,30 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: bold;
 }
-.comment-content {
+.comment_content {
     margin: 0;
     font-size: 1rem;
 }
 
-#like-btn{
+/* 3번 좋아요 버튼 만들기에 필요한 CSS */
+/* 3번 좋아요 버튼 만들기에 필요한 CSS */
+/* 3번 좋아요 버튼 만들기에 필요한 CSS */
+
+#likeBtn{
     padding: 3rem;
     font-size: 6rem;
-    color: black;
+    color: #273F4F;
     background-color: #d3d3d3;
 }
 
-.post-card {
+/* 4번 게시판 만들기에 필요한 CSS */
+/* 4번 게시판 만들기에 필요한 CSS */
+/* 4번 게시판 만들기에 필요한 CSS */
+
+.post_card {
+    position: relative;
     background-color: #d3d3d3;
     border-radius: 12px;
     padding: 1rem;
@@ -112,25 +136,27 @@ li {
     width: fit-content;
     min-width: 600px;
 }
-.post-card h4 {
+.post_card h2{
     margin-top: 0;
 }
-.post-img {
+.post_img {
     width: 100%;
     max-width: 50vw;
     max-height: 50vh;
     margin-top: 0.5rem;
     border-radius: 6px;
 }
-.post-like-btn, .delete-btn {
+.deleteBtn {
     margin-top: 0.5rem;
     margin-right: 0.5rem;
     background-color: #6366f1;
+    position: absolute;
+    right: 0.3rem;
+    bottom: 0.5rem;
     color: white;
     border: none;
     border-radius: 6px;
     padding: 0.4rem 0.8rem;
     cursor: pointer;
 }
-
 

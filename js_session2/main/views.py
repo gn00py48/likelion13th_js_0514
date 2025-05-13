@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def practice1_view(request):
-    return render(request, 'practice/practice1.html')
+def practice_view(request):
+    return render(request, 'practice/practice.html')
